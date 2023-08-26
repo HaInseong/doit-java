@@ -3,17 +3,14 @@ package ch04;
 public class StudentTest {
 
 	public static void main(String[] args) {
-		Student studentLee = new Student();
-		studentLee.studentName = "Lee";
+		Student studentLee = new Student(100, "Lee");
 		studentLee.studentAddress = "서울시 강남구";
 		studentLee.showStudentInfo();
 		System.out.println("get을 이용한 name값 가져오기: " + studentLee.getStudentName());
 		
 		System.out.println();
 		
-		Student studentKim = new Student();
-		studentKim.studentName = "Kim";
-		studentKim.studentAddress = "NewYork";
+		Student studentKim = new Student(101, "Kim", "NewYork");
 		studentKim.showStudentInfo();
 		System.out.println("get을 이용한 name값 가져오기: " + studentKim.getStudentName());
 		

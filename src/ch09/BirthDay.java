@@ -35,5 +35,8 @@ public class BirthDay {
 		return isValid;
 	}
 	
+	public void printThis() {
+		System.out.println(this);
+	}
 	
 }

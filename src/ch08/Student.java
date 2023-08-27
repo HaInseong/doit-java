@@ -2,8 +2,8 @@ package ch08;
 
 //Controller + Service 역할
 public class Student {
-	int studentId;
-	String studentName;
+	private int studentId; //private 선언 시 외부에서 접근 불가해진다.
+	private String studentName;
 	
 	Subject korean = new Subject();
 	Subject math = new Subject();
@@ -15,7 +15,8 @@ public class Student {
 //	String KoreanName;
 //	String mathName;
 	
-	public Student(int id, String name) {
+	public Student(int id, String name) { //생성자에서는 매개변수로 사용된 것이기 때문에 private 변수와 무관하므로 사용가능하다.
+		//private 변수는 외부에서 접근이 불가능하므로 실제로는 생성될 때만 값이 할당된다.
 		this.studentId = id;
 		this.studentName = name;
 		
@@ -36,5 +37,17 @@ public class Student {
 	public void showStudentScore() {
 		int total = korean.score + math.score;
 		System.out.println(studentName + " 학생의 총점은 " + total + "점 입니다.");
+	}
+	
+	public int getStudetId() { //private 선언한 변수의 값을 메소드를 통해 외부에서 사용할 수 있도록 해준다.
+		return studentId;
+	}
+	
+	public String getStudentName() {
+		return studentName;
+	}
+	
+	public void setStudentName(String name) {
+		this.studentName = name;
 	}
 }
